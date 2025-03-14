@@ -10,7 +10,6 @@ displaying plots, or exporting data.
 from netCDF4 import Dataset
 import numpy as np
 import matplotlib.pyplot as plt
-import imp
 from matplotlib import cm
 from scipy.optimize import fsolve
 import scipy.integrate as integrate
@@ -19,9 +18,8 @@ from scipy.optimize import minimize
 import logging
 
 try:
-    imp.find_module("mayavi")
-    use_mayavi = True
     from mayavi import mlab
+    use_mayavi = True
     import vtk
 except ImportError:
     use_mayavi = False
